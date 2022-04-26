@@ -1,0 +1,30 @@
+const express = require('express');
+const path = require('path');
+
+const mongoose = require('mongoose');
+
+// GkUoRYP9wBU2smxu
+
+const app = express();
+
+mongoose.connect('mongodb+srv://chrisBradwell:GkUoRYP9wBU2smxu@cluster0.2zyvo.mongodb.net/yelp-camp', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
+
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'Connection Error'));
+db.once('open', () => {
+    console.log('Database Connected');
+})
+
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+app.get('/', (req, res) => {
+    res.render('home.ejs');
+})
+
+app.listen(3000, () => {
+    console.log('Serving on port 3000');
+})
