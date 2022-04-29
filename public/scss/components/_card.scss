@@ -1,0 +1,69 @@
+.card {
+
+    text-align: center;
+    border-radius: 1.5rem;
+    height: fit-content;
+    width: 100%;
+    margin: 1rem auto;
+    background: $grey-light-1;
+
+    &-img-top {
+        border-top-left-radius: 1.5rem;
+        border-top-right-radius: 1.5rem;
+        width: 100%;
+    }
+
+    &-header {
+        border-top-left-radius: 1.5rem;
+        border-top-right-radius: 1.5rem;
+
+        padding: .8rem;
+        color: $dark;
+        font-weight: bold;
+        font-size: 1.2rem;
+        background: $light;
+    }
+
+    &-body {
+        padding: 1.3rem 1rem;
+        color: $dark;
+
+        font-size: 1rem;
+        
+    }
+
+    &-title {
+        padding: .6rem 0;
+    }
+
+    &-price {
+        font-size: 1.5rem;
+    }
+
+    &-items {
+        list-style: none;
+    }
+
+    &-features {
+        list-style: none;
+        columns: 2;
+
+        &-items {
+            padding: .3rem 0;
+        }
+    }
+}
+
+
+@include view(phablet) {
+    .card {
+        width: 80%;
+        margin: 1rem auto;
+    }
+}
+
+@include view(tablet) {
+    // .card {
+    //     width: 60%;
+    // }
+}

@@ -1,0 +1,43 @@
+.main-footer {
+    background: $dark-blue;
+    position: static;
+    bottom: 0;
+
+    padding: 4rem 2rem;
+
+    font-size: 1.1rem;
+    text-align: center;
+
+    &_item {
+        list-style: none;
+        vertical-align: middle;
+    }
+
+    &_link {
+        padding: .7rem 0;
+
+        & a {
+            color: $light;
+            text-decoration: none;
+
+            &:hover {
+                color: $main-pink;
+                border-bottom: 2px solid $main-pink;
+            }
+        }
+    }
+}
+
+@include view(phablet) {
+    .main-footer {
+
+        &_item {
+            margin: 0 1rem;
+        }
+
+        &_link {
+            flex-direction: row;
+            justify-content: center;
+        }
+    }
+}

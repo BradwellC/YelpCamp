@@ -1,0 +1,22 @@
+.container {
+  display: block;
+  width: 100%;
+  padding: .5rem 2rem;
+}
+
+.container-flex {
+  display: flex;
+  flex-direction: column;
+
+  display: block;
+
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container-grid {
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1fr);
+}

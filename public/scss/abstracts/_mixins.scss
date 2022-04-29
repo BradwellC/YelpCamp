@@ -1,0 +1,48 @@
+@mixin view($point) {
+
+  @if $point==phablet {
+    @media (min-width: 898px) {
+      @content ;
+    }
+  }
+
+  @else if $point==tablet {
+    @media (min-width: 1024px) {
+      @content ;
+    }
+  }
+
+  @else if $point==desktop {
+    @media (min-width: 1200px) {
+      @content ;
+    }
+  }
+}
+
+@mixin display-flex() {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+}
+
+@mixin grid() {
+  display: grid;
+  display: -ms-grid;
+  display: -moz-grid;
+}
+
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
