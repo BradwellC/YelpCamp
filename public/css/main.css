@@ -117,7 +117,12 @@ html {
 body {
   font-family: "Nunito", sans-serif;
   font-size: 62.5%;
-  background: #5C038C;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .open {
@@ -287,6 +292,13 @@ a {
   margin-bottom: 8rem;
 }
 
+.ml-3 {
+  margin-left: 3rem;
+}
+
+.navbar {
+  font-family: "Nunito" sans-serif;
+}
 .navbar-brand {
   font-size: 1.3rem;
   margin-left: 1rem;
@@ -418,15 +430,16 @@ a {
 
 .form-label {
   font-family: "Montserrat", sans-serif;
+  margin-left: 0.5rem;
   margin-bottom: 0.6rem;
-  font-size: 13px;
+  font-size: 1rem;
 }
 
 .form-control {
-  font-size: 1.1rem;
+  font-size: 1rem;
   display: block;
   width: 100%;
-  padding: 0.7rem;
+  padding: 0.5rem;
   color: #212529;
   background-color: #f0eeee;
   background-clip: padding-box;
@@ -566,6 +579,11 @@ a {
   .card {
     width: 80%;
     margin: 1rem auto;
+  }
+}
+@media (min-width: 1024px) {
+  .card {
+    width: 70%;
   }
 }
 .media-scroller {
@@ -831,6 +849,36 @@ a {
   color: lightseagreen;
 }
 
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+      user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.4rem 0.8rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+}
+.btn-violet {
+  background-color: #8a2be2;
+  color: #fff;
+  transition: all 0.4s ease-in;
+}
+.btn-violet:hover {
+  background-color: #fff;
+  border: 1.4px solid #8a2be2;
+  color: #8a2be2;
+}
+
 .container {
   display: block;
   width: 100%;
@@ -839,7 +887,6 @@ a {
 
 .container-flex {
   display: flex;
-  flex-direction: column;
   display: block;
   width: 100%;
   margin: 0 auto;
@@ -849,7 +896,13 @@ a {
   margin: 0;
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(1fr);
+  grid-template-columns: 1fr;
+  padding: 1rem;
+}
+@media (min-width: 1024px) {
+  .container-grid {
+    grid-template-columns: repeat(4, auto);
+  }
 }
 
 header {
@@ -868,9 +921,8 @@ header {
 
 .main-footer {
   background: #050A30;
-  position: static;
-  bottom: 0;
-  padding: 4rem 2rem;
+  margin-top: auto;
+  padding: 2rem;
   font-size: 1.1rem;
   text-align: center;
 }
@@ -897,5 +949,23 @@ header {
   .main-footer_link {
     flex-direction: row;
     justify-content: center;
+  }
+}
+.new-campground {
+  margin-top: 8rem;
+}
+.new-campground h1 {
+  text-align: center;
+  padding-bottom: 2rem;
+  margin: auto;
+}
+.new-campground form {
+  padding: 0 2rem;
+  margin: auto;
+}
+
+@media (min-width: 1024px) {
+  .new-campground form {
+    width: 50%;
   }
 }/*# sourceMappingURL=main.css.map */

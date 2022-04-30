@@ -1,0 +1,25 @@
+.new-campground {
+    margin-top: 8rem;
+
+    & h1 {
+        text-align: center;
+        padding-bottom: 2rem;
+        margin: auto;
+    }
+
+    & form {
+        padding: 0 2rem;
+        margin: auto;
+    }
+}
+
+
+@include view(tablet) {
+    .new-campground {
+
+
+        & form {
+            width: 50%;
+        }
+    }
+}

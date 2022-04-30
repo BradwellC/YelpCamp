@@ -15,8 +15,15 @@ html {
 body {
   font-family: $main-font;
   font-size: 62.5%;
-  background: $violet;
 }
+
+main {
+  display: flex;
+  flex-direction: column;
+
+  height: 100vh;
+}
+
 
 .open {
   display: block !important;

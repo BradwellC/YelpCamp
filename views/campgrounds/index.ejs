@@ -4,12 +4,20 @@
 <div>
   <a href="/campgrounds/new">Create new campground</a>
 </div>
-<div class="grid-container">
+<div class="container-grid">
   <ul>
     <% for (let camp of campgrounds) { %>
-    <li>
-      <a href="/campgrounds/<%= camp._id %>"><%= camp.title %></a>
-    </li>
+
+    <div class="card">
+      <div class="card-header"><%= camp.title %></div>
+      <div class="card-body">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem iure
+        maxime quasi ex dolorem numquam exercitationem illum consectetur harum
+        impedit odit incidunt odio illo, nulla, qui nesciunt. Iste, veritatis
+        quis.
+      </div>
+      <a class="btn" href="/campgrounds/<%= camp._id %>">View Campground</a>
+    </div>
     <% } %>
   </ul>
 </div>

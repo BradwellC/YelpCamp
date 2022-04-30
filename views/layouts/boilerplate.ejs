@@ -12,10 +12,13 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/main.css" />
   </head>
-  <body>
-    <%- partial('layouts/navbar') %>
-
-    <main><%- partial('layouts/modal') %> <%- body %></main>
+  
+  <main>
+    <%- include('../partials/navbar') %>
+    <%- include('../partials/modal.ejs') %> 
+    <%- body %>
+    <%- include('../partials/footer') %>
+  </main>
 
     <script src="/js/base.js"></script>
   </body>

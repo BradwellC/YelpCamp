@@ -6,7 +6,7 @@
 
 .container-flex {
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
 
   display: block;
 
@@ -18,5 +18,11 @@
   margin: 0;
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(1fr);
+  grid-template-columns: 1fr;
+  padding: 1rem;
+
+
+  @include view(tablet) {
+    grid-template-columns: repeat(4, auto);
+  }
 }

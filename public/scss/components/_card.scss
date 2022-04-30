@@ -63,7 +63,7 @@
 }
 
 @include view(tablet) {
-    // .card {
-    //     width: 60%;
-    // }
+    .card {
+        width: 70%;
+    }
 }
