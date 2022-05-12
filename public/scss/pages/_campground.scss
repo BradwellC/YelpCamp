@@ -1,0 +1,43 @@
+.campground-title {
+    margin: 7rem 2rem 3.5rem;
+
+    & p {
+        padding: .7rem 0;
+    }
+}
+
+.campgrounds {
+    display: grid;
+    grid-template-columns: 1fr;
+
+
+    & .card {
+        width: 90%;
+        margin: auto;
+        padding: 1rem 0;
+    }
+}
+
+@include view(phablet) {
+    .campgrounds {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        & .card {
+            width: 90%;
+
+        }
+    }
+}
+
+@include view(tablet) {
+    .campgrounds {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+        & .card {
+            width: 90%;
+            
+        }
+    }
+}

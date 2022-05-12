@@ -1,146 +1,75 @@
 .navbar {
-  font-family: 'Nunito' sans-serif;
+  background-color: $dark-blue;
+
+  display: flex;
+  flex-direction: column;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 
   &-brand {
+    padding: 1rem;
     font-size: 1.3rem;
-    margin-left: 1rem;
     color: $blueviolet;
+    text-transform: uppercase;
     font-weight: bolder;
   }
 
-  &-img {
-    height: 2.5rem;
-    vertical-align: middle;
-    margin-left: .6rem;
-  }
-
   &-toggle {
-    width: 3rem;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    vertical-align: middle;
+    position: absolute;
+    top: 1.2rem;
+    right: 1rem;
+    width: 2rem;
 
     & i {
+      display: flex;
       width: 100%;
-      display: block;
-      font-size: 1.3rem;
+
+      font-size: 1.5rem;
       color: $light;
 
       &:hover {
-        color: $grey-dark-3;
+        color: $blueviolet;
       }
     }
   }
 
   &-nav {
+    height: 100%;
+
     display: none;
+    flex-direction: column;
+    opacity: 0;
+
+    margin: 0;
+    padding: 0;
   }
 
   &-item {
     list-style: none;
-    display: flex;
-    margin: 0 1rem;
-  }
-
-  &-link {
-    text-decoration: none;
-    padding: .3rem 0;
-    font-weight: bold;
-    color: $light;
-    font-size: 1rem;
-
-    &:hover {
-      color: $blueviolet;
-      border-bottom: 2px solid $blueviolet;
-    }
-  }
-
-  &-cta {
-    text-decoration: none;
-    background: $blueviolet;
-    padding: .1rem 1rem;
-    color: $light;
-    
-    border-radius: 10px;
-
-    font-size: 1.2rem;
-
-    transition: all .4s ease 0s;
-
-    cursor: pointer;
-
-    &:hover {
-      background: $light;
-      color: $blueviolet;
-      border: 1.3px solid $blueviolet;
-    }
-  }
-}
-
-.mobile-navbar {
-  display: none;
-  opacity: 0;
-  position: fixed;
-  z-index: 111;
-  top: 0;
-  left: 0;
-  width: 60%;
-  height: 100vh;
-  background: $dark-blue;
-
-  transition: all .5s ease-in-out 0s;
-
-  &_nav {
-    width: 90%;
-    height: 100%;
-    list-style: none;
-    margin: 0 auto;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
   }
 
-  &_item {
-    margin: 1rem 0;
-    font-size: 1.5rem;
-
-  }
-
-  &_link {
-    text-decoration: none;
-    color: $light;
-
-    &:hover {
-      color: $blueviolet;
-      border-bottom: 2px solid $blueviolet;
-    }
-  }
-
-  &_cta {
-    background: $blueviolet;
-    color: $light;
-
-    
-    padding: .5rem 2rem;
-    border-radius: 20px;
+  &-link {
+    display: block;
 
     text-decoration: none;
-
-    transition: all ease .5s 0s;
+    color: $light;
+    padding: .5rem 1rem;
 
     &:hover {
-      background: $blueviolet;
-      color: $light;
-      border: 1.5px solid $blueviolet;
+      background-color: $blueviolet;
     }
   }
 }
 
-@include view(phablet) {
+@include view(tablet) {
   .navbar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 
     &-toggle {
       display: none;
@@ -148,6 +77,8 @@
 
     &-nav {
       display: flex;
+      flex-direction: row;
+      opacity: 1;
     }
   }
 }

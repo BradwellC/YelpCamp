@@ -1,7 +1,7 @@
 <% layout('layouts/boilerplate') %>
 <div class="new-campground">
   <h1>New Campground</h1>
-  <form action="/campgrounds" method="post">
+  <form id="campgroundForm" action="/campgrounds" method="post">
     <div class="form-group">
       <label class="form-label" for="title">Title:</label>
       <input
@@ -10,6 +10,7 @@
         id="title"
         name="campground[title]"
       />
+      <label id="error"></label>
     </div>
 
     <div class="form-group">
@@ -26,9 +27,11 @@
       <label class="form-label" for="price">Price:</label>
       <input
         class="form-control"
-        type="text"
+        type="number"
         id="price"
         name="campground[price]"
+        min="0"
+        step="any"
       />
     </div>
 
@@ -42,7 +45,9 @@
       />
     </div>
 
-    <button class="btn btn-violet">Add Campground</button>
-    <a class="btn btn-violet ml-3" href="/campgrounds">Back to campgrounds</a>
+    <div class="form-group">
+      <button class="btn btn-violet">Add Campground</button>
+      <a class="btn btn-violet" href="/campgrounds">Back to campgrounds</a>
+    </div>
   </form>
 </div>

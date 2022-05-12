@@ -1,0 +1,32 @@
+.show-campground {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 1rem;
+    margin: 6rem auto;
+
+    .card {
+        width: 90%;
+    }
+
+
+    @include view(tablet) {
+        .show-campground {
+            grid-template-columns: repeat(3, auto);
+            
+            &_left {
+                grid-column: 1;
+                margin: auto;
+            }
+            
+            &_right {
+                grid-column: 2 / 3;
+                margin: auto;
+            }
+        }
+
+        .card {
+            width: 70%;
+            margin: auto;
+        }
+    }
+}

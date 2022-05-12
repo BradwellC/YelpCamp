@@ -30,12 +30,14 @@ function closeModal() {
     backdrop.classList.remove('open');
 }
 
-/* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
-navbarToggle.addEventListener('click', function () {
-    mobileNav.classList.add('open')
-    backdrop.classList.add('open');
+const toggleBtn = document.getElementsByClassName('navbar-toggle')[0]
+const navbarNav = document.getElementsByClassName('navbar-nav')[0]
 
-})
+const navbarLink = document.getElementsByClassName('navbar-link')[0]
+
+toggleBtn.addEventListener('click', () => {
+    navbarNav.classList.toggle('open');
+});
 
 /*  Accordion script  */
 const accordionSelector = document.querySelectorAll(".accordion");
@@ -89,3 +91,33 @@ $(document).ready(function () {
         } // End if
     });
 });
+
+// Form validation
+const title = document.getElementById('title')
+const password = document.getElementById('password')
+const form = document.getElementById('campgroundForm')
+const errorElement = document.getElementById('error')
+
+form.addEventListener('submit', (e) => {
+    let messages = []
+    if (title.value === '' || title.value == null) {
+        messages.push('Campground name is required')
+    }
+
+    if (password.value.length <= 6) {
+        messages.push('Password must be longer than 6 characters')
+    }
+
+    if (password.value.length >= 20) {
+        messages.push('Password must be less than 20 characters')
+    }
+
+    if (password.value === 'password') {
+        messages.push('Password cannot be password')
+    }
+
+    if (messages.length > 0) {
+        e.preventDefault()
+        errorElement.innerText = messages.join(', ')
+    }
+})

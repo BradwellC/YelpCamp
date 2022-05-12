@@ -297,125 +297,71 @@ a {
 }
 
 .navbar {
-  font-family: "Nunito" sans-serif;
+  background-color: #050A30;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 .navbar-brand {
+  padding: 1rem;
   font-size: 1.3rem;
-  margin-left: 1rem;
   color: #8a2be2;
+  text-transform: uppercase;
   font-weight: bolder;
 }
-.navbar-img {
-  height: 2.5rem;
-  vertical-align: middle;
-  margin-left: 0.6rem;
-}
 .navbar-toggle {
-  width: 3rem;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  vertical-align: middle;
+  position: absolute;
+  top: 1.2rem;
+  right: 1rem;
+  width: 2rem;
 }
 .navbar-toggle i {
+  display: flex;
   width: 100%;
-  display: block;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   color: #fff;
 }
 .navbar-toggle i:hover {
-  color: #333;
+  color: #8a2be2;
 }
 .navbar-nav {
+  height: 100%;
   display: none;
+  flex-direction: column;
+  opacity: 0;
+  margin: 0;
+  padding: 0;
 }
 .navbar-item {
   list-style: none;
-  display: flex;
-  margin: 0 1rem;
-}
-.navbar-link {
-  text-decoration: none;
-  padding: 0.3rem 0;
-  font-weight: bold;
-  color: #fff;
-  font-size: 1rem;
-}
-.navbar-link:hover {
-  color: #8a2be2;
-  border-bottom: 2px solid #8a2be2;
-}
-.navbar-cta {
-  text-decoration: none;
-  background: #8a2be2;
-  padding: 0.1rem 1rem;
-  color: #fff;
-  border-radius: 10px;
-  font-size: 1.2rem;
-  transition: all 0.4s ease 0s;
-  cursor: pointer;
-}
-.navbar-cta:hover {
-  background: #fff;
-  color: #8a2be2;
-  border: 1.3px solid #8a2be2;
-}
-
-.mobile-navbar {
-  display: none;
-  opacity: 0;
-  position: fixed;
-  z-index: 111;
-  top: 0;
-  left: 0;
-  width: 60%;
-  height: 100vh;
-  background: #050A30;
-  transition: all 0.5s ease-in-out 0s;
-}
-.mobile-navbar_nav {
-  width: 90%;
-  height: 100%;
-  list-style: none;
-  margin: 0 auto;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
-.mobile-navbar_item {
-  margin: 1rem 0;
-  font-size: 1.5rem;
-}
-.mobile-navbar_link {
+.navbar-link {
+  display: block;
   text-decoration: none;
   color: #fff;
+  padding: 0.5rem 1rem;
 }
-.mobile-navbar_link:hover {
-  color: #8a2be2;
-  border-bottom: 2px solid #8a2be2;
-}
-.mobile-navbar_cta {
-  background: #8a2be2;
-  color: #fff;
-  padding: 0.5rem 2rem;
-  border-radius: 20px;
-  text-decoration: none;
-  transition: all ease 0.5s 0s;
-}
-.mobile-navbar_cta:hover {
-  background: #8a2be2;
-  color: #fff;
-  border: 1.5px solid #8a2be2;
+.navbar-link:hover {
+  background-color: #8a2be2;
 }
 
-@media (min-width: 898px) {
+@media (min-width: 1024px) {
+  .navbar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
   .navbar-toggle {
     display: none;
   }
   .navbar-nav {
     display: flex;
+    flex-direction: row;
+    opacity: 1;
   }
 }
 .form-group {
@@ -534,34 +480,49 @@ a {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  width: 100%;
+  width: 800%;
   margin: 1rem auto;
-  background: #faf9f9;
 }
 .card-img-top {
   border-top-left-radius: 1.5rem;
   border-top-right-radius: 1.5rem;
   width: 100%;
+  height: 250px;
 }
 .card-header {
-  border-top-left-radius: 1.5rem;
-  border-top-right-radius: 1.5rem;
   padding: 0.8rem;
-  color: #000;
+  color: #fff;
   font-weight: bold;
   font-size: 1.2rem;
-  background: #fff;
+  background: #000C66;
 }
 .card-body {
-  padding: 1.3rem 1rem;
+  padding: 1rem;
   color: #000;
   font-size: 1rem;
+  background: #faf9f9;
+  margin: auto;
+}
+.card-footer {
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  padding: 1.2rem 0.8rem;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  background: #000C66;
 }
 .card-title {
   padding: 0.6rem 0;
 }
 .card-price {
-  font-size: 1.5rem;
+  float: right;
+}
+.card-author {
+  float: left;
+}
+.card-item {
+  padding: 1.5rem 0.9rem;
 }
 .card-items {
   list-style: none;
@@ -879,6 +840,32 @@ a {
   color: #8a2be2;
 }
 
+.list-group {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  border-radius: 0.45rem;
+  width: 400px;
+}
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #212529;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+.list-group-item:first-child {
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+.list-group-item:last-child {
+  border-bottom-right-radius: inherit;
+  border-bottom-left-radius: inherit;
+}
+
 .container {
   display: block;
   width: 100%;
@@ -887,21 +874,23 @@ a {
 
 .container-flex {
   display: flex;
-  display: block;
   width: 100%;
   margin: 0 auto;
 }
 
 .container-grid {
-  margin: 0;
   display: grid;
-  gap: 1rem;
   grid-template-columns: 1fr;
-  padding: 1rem;
+  padding: 0 1rem;
+}
+@media (min-width: 898px) {
+  .container-grid {
+    grid-template-columns: auto auto;
+  }
 }
 @media (min-width: 1024px) {
   .container-grid {
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: auto auto auto;
   }
 }
 
@@ -967,5 +956,66 @@ header {
 @media (min-width: 1024px) {
   .new-campground form {
     width: 50%;
+  }
+}
+.campground-title {
+  margin: 7rem 2rem 3.5rem;
+}
+.campground-title p {
+  padding: 0.7rem 0;
+}
+
+.campgrounds {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.campgrounds .card {
+  width: 90%;
+  margin: auto;
+  padding: 1rem 0;
+}
+
+@media (min-width: 898px) {
+  .campgrounds {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .campgrounds .card {
+    width: 90%;
+  }
+}
+@media (min-width: 1024px) {
+  .campgrounds {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .campgrounds .card {
+    width: 90%;
+  }
+}
+.show-campground {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 1rem;
+  margin: 6rem auto;
+}
+.show-campground .card {
+  width: 90%;
+}
+@media (min-width: 1024px) {
+  .show-campground .show-campground {
+    grid-template-columns: repeat(3, auto);
+  }
+  .show-campground .show-campground_left {
+    grid-column: 1;
+    margin: auto;
+  }
+  .show-campground .show-campground_right {
+    grid-column: 2/3;
+    margin: auto;
+  }
+  .show-campground .card {
+    width: 70%;
+    margin: auto;
   }
 }/*# sourceMappingURL=main.css.map */
