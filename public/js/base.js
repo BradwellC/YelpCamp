@@ -92,32 +92,92 @@ $(document).ready(function () {
     });
 });
 
-// Form validation
-const title = document.getElementById('title')
-const password = document.getElementById('password')
-const form = document.getElementById('campgroundForm')
-const errorElement = document.getElementById('error')
+const form = document.getElementById('form');
+const username = document.getElementById('username');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const password2 = document.getElementById('password2');
+const title = document.getElementById('title');
+const description = document.getElementById('description');
+const price = document.getElementById('price');
+const location = document.getElementById('location');
 
-form.addEventListener('submit', (e) => {
-    let messages = []
-    if (title.value === '' || title.value == null) {
-        messages.push('Campground name is required')
+form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    checkInputs();
+});
+
+function checkInputs() {
+    // trim to remove the whitespaces
+    const usernameValue = username.value.trim();
+    const emailValue = email.value.trim();
+    const passwordValue = password.value.trim();
+    const password2Value = password2.value.trim();
+    const titleValue = title.value.trim();
+    const descriptionValue = description.value.trim();
+    const priceValue = price.value.trim();
+    const locationValue = location.value.trim();
+
+    if (titleValue === '') {
+        setErrorFor(title, 'Campground title cannot be blank');
+    } else {
+        setSuccessFor(title);
     }
 
-    if (password.value.length <= 6) {
-        messages.push('Password must be longer than 6 characters')
+    if (descriptionValue === '') {
+        setErrorFor(description, 'Description cannot be blank');
+    } else {
+        setSuccessFor(description);
     }
 
-    if (password.value.length >= 20) {
-        messages.push('Password must be less than 20 characters')
+    if (priceValue === '') {
+        setErrorFor(price, 'Price cannot be blank')
+    } else {
+        setSuccessFor(price)
     }
 
-    if (password.value === 'password') {
-        messages.push('Password cannot be password')
+    if (usernameValue === '') {
+        setErrorFor(username, 'Username cannot be blank');
+    } else {
+        setSuccessFor(username);
     }
 
-    if (messages.length > 0) {
-        e.preventDefault()
-        errorElement.innerText = messages.join(', ')
+    if (emailValue === '') {
+        setErrorFor(email, 'Email cannot be blank');
+    } else if (!isEmail(emailValue)) {
+        setErrorFor(email, 'Not a valid email');
+    } else {
+        setSuccessFor(email);
     }
-})
+
+    if (passwordValue === '') {
+        setErrorFor(password, 'Password cannot be blank');
+    } else {
+        setSuccessFor(password);
+    }
+
+    if (password2Value === '') {
+        setErrorFor(password2, 'Password check cannot be blank');
+    } else if (passwordValue !== password2Value) {
+        setErrorFor(password2, 'Passwords does not match');
+    } else {
+        setSuccessFor(password2);
+    }
+}
+
+function setErrorFor(input, message) {
+    const formControl = input.parentElement;
+    const small = formControl.querySelector('small');
+    formControl.className = 'form-control error';
+    small.innerText = message;
+}
+
+function setSuccessFor(input) {
+    const formControl = input.parentElement;
+    formControl.className = 'form-control success';
+}
+
+function isEmail(email) {
+    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+}

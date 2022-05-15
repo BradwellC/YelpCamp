@@ -31,12 +31,17 @@
 }
 
 @include view(tablet) {
+
+    .campground-title {
+        margin: 7rem auto 4rem auto;
+    }
+
     .campgrounds {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
 
         & .card {
-            width: 90%;
+            width: 80%;
             
         }
     }

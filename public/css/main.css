@@ -296,6 +296,10 @@ a {
   margin-left: 3rem;
 }
 
+.pr-3 {
+  padding-right: 3rem !important;
+}
+
 .navbar {
   background-color: #050A30;
   display: flex;
@@ -364,6 +368,10 @@ a {
     opacity: 1;
   }
 }
+#form {
+  margin-bottom: 6rem;
+}
+
 .form-group {
   display: block;
   position: relative;
@@ -397,6 +405,39 @@ a {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   outline: none;
 }
+.form-control:focus {
+  outline: 0;
+}
+.form-control small {
+  color: #FF0000;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+.form-control i {
+  visibility: hidden;
+  position: absolute;
+  top: 40px;
+  right: 10px;
+}
+.form-control.success {
+  border-color: #55c57a;
+}
+.form-control.success i.fa-check-circle {
+  color: #2ecc71;
+  visibility: visible;
+}
+.form-control.error {
+  border-color: #FF0000;
+}
+.form-control.error i.fa-exclamation-circle {
+  color: #FF0000;
+  visibility: visible;
+}
+.form-control.error small {
+  visibility: visible;
+}
 
 .form-check {
   display: block;
@@ -425,8 +466,6 @@ a {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  -webkit-print-color-adjust: exact;
-  color-adjust: exact;
 }
 
 .form-check-input[type=checkbox] {
@@ -985,12 +1024,16 @@ header {
   }
 }
 @media (min-width: 1024px) {
+  .campground-title {
+    margin: 7rem auto 4rem auto;
+  }
+
   .campgrounds {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
   }
   .campgrounds .card {
-    width: 90%;
+    width: 80%;
   }
 }
 .show-campground {
