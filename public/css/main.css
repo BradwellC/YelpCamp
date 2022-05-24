@@ -116,7 +116,7 @@ html {
 
 body {
   font-family: "Nunito", sans-serif;
-  font-size: 62.5%;
+  min-height: 100vh;
 }
 
 main {
@@ -408,35 +408,11 @@ a {
 .form-control:focus {
   outline: 0;
 }
-.form-control small {
-  color: #FF0000;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  visibility: hidden;
-}
-.form-control i {
-  visibility: hidden;
-  position: absolute;
-  top: 40px;
-  right: 10px;
-}
-.form-control.success {
+.form-control input:valid {
   border-color: #55c57a;
 }
-.form-control.success i.fa-check-circle {
-  color: #2ecc71;
-  visibility: visible;
-}
-.form-control.error {
+.form-control input:invalid:required {
   border-color: #FF0000;
-}
-.form-control.error i.fa-exclamation-circle {
-  color: #FF0000;
-  visibility: visible;
-}
-.form-control.error small {
-  visibility: visible;
 }
 
 .form-check {
@@ -513,6 +489,18 @@ a {
   background-image: none;
 }
 
+.form-group.error input {
+  border-color: var(--error-color);
+}
+
+.form-group.success input {
+  border-color: var(--success-color);
+}
+
+.form-group small {
+  color: var(--error-color);
+}
+
 .card {
   text-align: center;
   border-radius: 1.5rem;
@@ -561,7 +549,7 @@ a {
   float: left;
 }
 .card-item {
-  padding: 1.5rem 0.9rem;
+  padding: 1rem 0.4rem;
 }
 .card-items {
   list-style: none;
@@ -1030,7 +1018,7 @@ header {
 
   .campgrounds {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
   .campgrounds .card {
     width: 80%;

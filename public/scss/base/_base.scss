@@ -14,7 +14,8 @@ html {
 
 body {
   font-family: $main-font;
-  font-size: 62.5%;
+  // font-size: 62.5%;
+  min-height: 100vh;
 }
 
 main {

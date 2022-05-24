@@ -30,12 +30,13 @@ function closeModal() {
     backdrop.classList.remove('open');
 }
 
-const toggleBtn = document.getElementsByClassName('navbar-toggle')[0]
-const navbarNav = document.getElementsByClassName('navbar-nav')[0]
+// Navbar toggle
+const navToggle = document.querySelector('.navbar-toggle');
+const navbarNav = document.querySelector('.navbar-nav');
 
-const navbarLink = document.getElementsByClassName('navbar-link')[0]
+const navbarLink = document.querySelector('.navbar-link');
 
-toggleBtn.addEventListener('click', () => {
+navToggle.addEventListener('click', function () {
     navbarNav.classList.toggle('open');
 });
 
@@ -52,19 +53,6 @@ accordionSelector.forEach((accordion) => {
         }
     };
 });
-
-function darkMode() {
-    var element = document.body;
-    var content = document.getElementById("DarkModetext");
-    element.className = "dark-mode";
-    content.innerText = "Dark Mode is ON";
-}
-function lightMode() {
-    var element = document.body;
-    var content = document.getElementById("DarkModetext");
-    element.className = "light-mode";
-    content.innerText = "Dark Mode is OFF";
-}
 
 // Smooth Scrolling
 $(document).ready(function () {
@@ -91,93 +79,3 @@ $(document).ready(function () {
         } // End if
     });
 });
-
-const form = document.getElementById('form');
-const username = document.getElementById('username');
-const email = document.getElementById('email');
-const password = document.getElementById('password');
-const password2 = document.getElementById('password2');
-const title = document.getElementById('title');
-const description = document.getElementById('description');
-const price = document.getElementById('price');
-const location = document.getElementById('location');
-
-form.addEventListener('submit', e => {
-    e.preventDefault();
-
-    checkInputs();
-});
-
-function checkInputs() {
-    // trim to remove the whitespaces
-    const usernameValue = username.value.trim();
-    const emailValue = email.value.trim();
-    const passwordValue = password.value.trim();
-    const password2Value = password2.value.trim();
-    const titleValue = title.value.trim();
-    const descriptionValue = description.value.trim();
-    const priceValue = price.value.trim();
-    const locationValue = location.value.trim();
-
-    if (titleValue === '') {
-        setErrorFor(title, 'Campground title cannot be blank');
-    } else {
-        setSuccessFor(title);
-    }
-
-    if (descriptionValue === '') {
-        setErrorFor(description, 'Description cannot be blank');
-    } else {
-        setSuccessFor(description);
-    }
-
-    if (priceValue === '') {
-        setErrorFor(price, 'Price cannot be blank')
-    } else {
-        setSuccessFor(price)
-    }
-
-    if (usernameValue === '') {
-        setErrorFor(username, 'Username cannot be blank');
-    } else {
-        setSuccessFor(username);
-    }
-
-    if (emailValue === '') {
-        setErrorFor(email, 'Email cannot be blank');
-    } else if (!isEmail(emailValue)) {
-        setErrorFor(email, 'Not a valid email');
-    } else {
-        setSuccessFor(email);
-    }
-
-    if (passwordValue === '') {
-        setErrorFor(password, 'Password cannot be blank');
-    } else {
-        setSuccessFor(password);
-    }
-
-    if (password2Value === '') {
-        setErrorFor(password2, 'Password check cannot be blank');
-    } else if (passwordValue !== password2Value) {
-        setErrorFor(password2, 'Passwords does not match');
-    } else {
-        setSuccessFor(password2);
-    }
-}
-
-function setErrorFor(input, message) {
-    const formControl = input.parentElement;
-    const small = formControl.querySelector('small');
-    formControl.className = 'form-control error';
-    small.innerText = message;
-}
-
-function setSuccessFor(input) {
-    const formControl = input.parentElement;
-    formControl.className = 'form-control success';
-}
-
-function isEmail(email) {
-    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
-}
