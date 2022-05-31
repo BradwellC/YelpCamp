@@ -31,3 +31,16 @@ main {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
+
+.error input {
+  border-color: var(--error-color);
+}
+
+.success input {
+  border-color: var(--success-color);
+}
+
+
+small {
+  color: var(--error-color);
+}

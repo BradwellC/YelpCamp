@@ -11,17 +11,17 @@
 
     @include view(tablet) {
         .show-campground {
-            grid-template-columns: repeat(3, auto);
+            grid-template-columns: repeat(4,
+                [col] 100px);
             
-            &_left {
-                grid-column: 1;
-                margin: auto;
-            }
-            
-            &_right {
-                grid-column: 2 / 3;
-                margin: auto;
-            }
+        }
+
+        .tabs {
+            grid-column: 1;
+        }
+
+        .campground-content {
+            grid-column: 2 / 4;
         }
 
         .card {

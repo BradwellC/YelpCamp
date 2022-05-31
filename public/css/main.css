@@ -131,6 +131,18 @@ main {
   transform: translateY(0) !important;
 }
 
+.error input {
+  border-color: var(--error-color);
+}
+
+.success input {
+  border-color: var(--success-color);
+}
+
+small {
+  color: var(--error-color);
+}
+
 p {
   padding-top: 1rem;
 }
@@ -185,11 +197,11 @@ a {
 }
 
 .text-left {
-  text-align: left;
+  text-align: left !important;
 }
 
 .text-right {
-  text-align: right;
+  text-align: right !important;
 }
 
 .m-auto {
@@ -201,11 +213,11 @@ a {
 }
 
 .m-2 {
-  margin: 2rem;
+  margin: 2rem !important;
 }
 
 .m-3 {
-  margin: 3rem;
+  margin: 3rem !important;
 }
 
 .m-4 {
@@ -237,23 +249,23 @@ a {
 }
 
 .mt-3 {
-  margin-top: 3rem;
+  margin-top: 3rem !important;
 }
 
 .mt-4 {
-  margin-top: 4rem;
+  margin-top: 4rem !important;
 }
 
 .mt-5 {
-  margin-top: 5rem;
+  margin-top: 5rem !important;
 }
 
 .mt-6 {
-  margin-top: 6rem;
+  margin-top: 6rem !important;
 }
 
 .mt-7 {
-  margin-top: 7rem;
+  margin-top: 7rem !important;
 }
 
 .mt-8 {
@@ -277,23 +289,23 @@ a {
 }
 
 .mb-5 {
-  margin-bottom: 5rem;
+  margin-bottom: 5rem !important;
 }
 
 .mb-6 {
-  margin-bottom: 6rem;
+  margin-bottom: 6rem !important;
 }
 
 .mb-7 {
-  margin-bottom: 7rem;
+  margin-bottom: 7rem !important;
 }
 
 .mb-8 {
-  margin-bottom: 8rem;
+  margin-bottom: 8rem !important;
 }
 
 .ml-3 {
-  margin-left: 3rem;
+  margin-left: 3rem !important;
 }
 
 .pr-3 {
@@ -408,12 +420,6 @@ a {
 .form-control:focus {
   outline: 0;
 }
-.form-control input:valid {
-  border-color: #55c57a;
-}
-.form-control input:invalid:required {
-  border-color: #FF0000;
-}
 
 .form-check {
   display: block;
@@ -487,18 +493,6 @@ a {
 .form-select[size]:not([size="1"]) {
   padding-right: 0.75rem;
   background-image: none;
-}
-
-.form-group.error input {
-  border-color: var(--error-color);
-}
-
-.form-group.success input {
-  border-color: var(--success-color);
-}
-
-.form-group small {
-  color: var(--error-color);
 }
 
 .card {
@@ -867,30 +861,38 @@ a {
   color: #8a2be2;
 }
 
-.list-group {
-  display: flex;
-  flex-direction: column;
-  padding-left: 0;
-  margin-bottom: 0;
-  border-radius: 0.45rem;
-  width: 400px;
+.alert {
+  padding: 20px;
+  color: white;
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
 }
-.list-group-item {
-  position: relative;
-  display: block;
-  padding: 0.5rem 1rem;
-  color: #212529;
-  text-decoration: none;
-  background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.125);
+
+.alert-failure {
+  background-color: rgba(255, 0, 0, 0.7) !important;
 }
-.list-group-item:first-child {
-  border-top-left-radius: inherit;
-  border-top-right-radius: inherit;
+
+.alert-success {
+  background-color: #0e4f1f !important;
 }
-.list-group-item:last-child {
-  border-bottom-right-radius: inherit;
-  border-bottom-left-radius: inherit;
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  opacity: 1;
+  transition: opacity 0.6s;
+  /* 600ms to fade out */
+}
+
+.closebtn:hover {
+  color: black;
 }
 
 .container {
@@ -1035,15 +1037,13 @@ header {
 }
 @media (min-width: 1024px) {
   .show-campground .show-campground {
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(4, [col] 100px);
   }
-  .show-campground .show-campground_left {
+  .show-campground .tabs {
     grid-column: 1;
-    margin: auto;
   }
-  .show-campground .show-campground_right {
-    grid-column: 2/3;
-    margin: auto;
+  .show-campground .campground-content {
+    grid-column: 2/4;
   }
   .show-campground .card {
     width: 70%;

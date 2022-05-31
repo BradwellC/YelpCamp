@@ -3,12 +3,14 @@
 @import 'abstracts/bg';
 @import 'abstracts/font';
 
+
 @import 'base/base';
 @import 'base/text';
 @import 'base/utilities';
 
 @import 'components/navbar';
 @import 'components/form';
+@import 'abstracts/form-vaildation';
 @import 'components/card';
 @import 'components/slider';
 @import 'components/carousel';
@@ -17,6 +19,7 @@
 @import 'components/portfolio';
 @import 'components/button';
 @import 'components/list-group';
+@import 'components/alert';
 
 @import 'layouts/grid';
 @import 'layouts/header';
