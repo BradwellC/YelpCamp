@@ -1,13 +1,13 @@
 @mixin view($point) {
 
   @if $point==phablet {
-    @media (min-width: 898px) {
+    @media (min-width: 600px) {
       @content ;
     }
   }
 
   @else if $point==tablet {
-    @media (min-width: 1024px) {
+    @media (min-width: 889px) {
       @content ;
     }
   }
@@ -24,6 +24,16 @@
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
+}
+
+@mixin flexColumn() {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flexRow() {
+  display: flex;
+  flex-direction: row;
 }
 
 @mixin grid() {
@@ -45,25 +55,4 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-@mixin tabs($label-selector: $label-selector,
-  $slider-selector: $slider-selector,
-  $content-selector: $content-selector) {
-
-  @for $i from 1 through $tab-count {
-    &:nth-of-type(#{$i}):checked {
-      #{$label-selector}:nth-child(#{$i}) {
-        @content;
-      }
-
-      #{$slider-selector} {
-        transform: translateX(#{100% * ($i - 1)});
-      }
-
-      #{$content-selector}:nth-child(#{$i}) {
-        display: block;
-      }
-    }
-  }
 }

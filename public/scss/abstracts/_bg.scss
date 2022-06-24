@@ -20,7 +20,7 @@
   background-color: $mediumpurple;
 }
 .bg-blueviolet {
-  background-color: $blueviolet;
+  background-color: $blueviolet !important;
 }
 .bg-fuchsia {
   background-color: $fuchsia;
@@ -29,14 +29,18 @@
   background-color: $dark-violet !important;
 }
 .bg-dark-blue {
-  background-color: $blue-dark;
+  background-color: $dark-blue !important;
 }
 
 .bg-dark {
-  background: $dark;
+  background-color: $dark;
   color: $light;
 }
 
 .bg-dark-highlight {
   background: $dark-highlight;
+}
+
+.bg-navy-blue {
+  background-color: $navy-blue !important;
 }

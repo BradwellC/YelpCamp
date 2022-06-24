@@ -9,11 +9,6 @@ $forest-green: #424242;
 
 $gold: #ffb900;
 $orangered: #ff7730;
-$red: #FF0000;
-
-$error-color: #dc3545;
-$success-color: #28a745;
-$warning-color: #ffc107;
 
 $blue-light: #2998ff;
 $blue-dark: #5643fa;
@@ -31,6 +26,7 @@ $main-pink: #ff1b68;
 $rose-pink: #ffcede;
 
 $purple: #896FBC;
+$pruple-light: #cb99c9;
 $mediumpurple: #9370db;
 $blueviolet: #8a2be2;
 $dark-violet: #9400d3;
@@ -64,3 +60,14 @@ $border: 0.8px solid $silver;
 $main-font: 'Nunito', sans-serif;
 $secondary-font: 'Poppins', sans-serif;
 $thrid-font: 'Montserrat', sans-serif;
+
+// RESPONSIVE BREAKPOINTS
+$bp-largest: 75em; // 1200px
+$bp-large: 62.5em; // 1000px
+$bp-medium: 50em; // 800px;
+$bp-small: 37.5em; // 600px;
+
+$magic-number: 0.09719;
+/* tan(11°)/2 */
+$content-width: 100vw;
+$skew-padding: calc(var(--content-width) * var(--magic-number));

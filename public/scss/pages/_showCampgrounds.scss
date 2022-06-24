@@ -12,8 +12,8 @@
     @include view(tablet) {
         .show-campground {
             grid-template-columns: repeat(4,
-                [col] 100px);
-            
+                    [col] 100px);
+
         }
 
         .tabs {

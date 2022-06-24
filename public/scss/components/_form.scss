@@ -1,7 +1,3 @@
-#form {
-  margin-bottom: 6rem;
-}
-
 .form-group {
   display: block;
   position: relative;
@@ -15,13 +11,13 @@
 
 .form-label {
   font-family: $thrid-font;
-  margin-left: .5rem;
+  // margin-left: .5rem;
   margin-bottom: .6rem;
-  font-size: 1rem;
+  font-size: 13px;
 }
 
 .form-control {
-  font-size: 1rem;
+  font-size: 1.1rem;
   display: block;
   width: 100%;
   padding: .5rem;
@@ -35,10 +31,6 @@
   border-radius: .5rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   outline: none;
-
-  &:focus {
-    outline: 0;
-  }
 }
 
 

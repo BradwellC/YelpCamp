@@ -1,70 +1,81 @@
-.backdrop {
-    position: fixed;
-    display: none;
-    opacity: 0;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.4);
-    transition: opacity .4s ease-in-out;
-}
-
 .modal {
+    display: none;
     position: fixed;
-    opacity: 0;
-    transform: translateY(-3rem);
-    transition: opacity .5s, transform .4s ease-in-out 0s;
-    z-index: 200;
-    top: 40%;
-    left: 10%;
+    z-index: 1001;
+    padding-top: 200px;
+    left: 0;
+    top: 0;
     width: 100%;
-    background: white;
-    padding: 1rem;
-    border: 1px solid #ccc;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
-.modal-title {
-    text-align: center;
-    margin: 0 0 1rem 0;
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
 }
 
-.modal-body {
-    text-align: center;
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
 }
 
-.modal-btn {
-    border: 1px solid #0e4f1f;
-    background: #0e4f1f;
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+.close {
+    color: $blueviolet;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
     text-decoration: none;
-    color: white;
-    font: inherit;
-    padding: 0.5rem 1rem;
     cursor: pointer;
 }
 
-.modal-btn:hover {
-    background: #2ddf5c;
-    border-color: #2ddf5c;
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
 }
 
-.modal-close {
-    background: red;
-    border-color: red;
+.modal-body {
+    padding: 2px 16px;
 }
 
-.modal-close:hover {
-    background: #ff5454;
-    border-color: #ff5454;
-}
-
-
-@include view(phablet) {
-    .modal {
-        top: 20%;
-        left: 30%;
-        width: 40%;
-    }
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
 }

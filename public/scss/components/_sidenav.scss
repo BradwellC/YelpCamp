@@ -1,0 +1,72 @@
+
+.sidenav {
+    grid-column: sidebar-start / sidebar-end;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 8rem;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    @media only screen and (max-width: $bp-large) {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    &-toggle {
+        position: absolute;
+        top: 2rem;
+        left: 2.5rem;
+        width: 3rem;
+        cursor: pointer;
+    
+        & i {
+            display: flex;
+            width: 100%;
+    
+            font-size: 3rem;
+            color: $light;
+    
+            &:hover {
+                color: $blueviolet;
+            }
+        }
+    }
+
+    &-nav {
+        vertical-align: middle;
+        display: flex;
+    }
+
+    &-item {
+        display: block;
+        padding: 2rem;
+
+        list-style: none;
+        text-align: center;
+        align-items: center;
+    }
+}
+
+.main-section {
+    margin: 2rem 10rem;
+}
+
+.side-logo {
+    grid-column: full-start / full-end;
+
+    padding: 2rem 0 7rem;
+    
+        & img {
+            margin: 0;
+            width: 650px;
+            margin: auto;
+        }
+}

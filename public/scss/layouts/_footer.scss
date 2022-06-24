@@ -1,15 +1,21 @@
 .main-footer {
-    background: $dark-blue;
-    margin-top: auto;
+    background: $blue-light;
+    position: static;
+    bottom: 0;
 
-    padding: 2rem;
+    padding: 4rem 2rem;
 
     font-size: 1.1rem;
     text-align: center;
 
+    color: $light;
+
+    border-top: 4px solid $fuchsia;
+
     &_item {
         list-style: none;
         vertical-align: middle;
+        
     }
 
     &_link {
@@ -30,6 +36,8 @@
 @include view(phablet) {
     .main-footer {
 
+        border-top: 3px solid $fuchsia;
+
         &_item {
             margin: 0 1rem;
         }
@@ -38,5 +46,11 @@
             flex-direction: row;
             justify-content: center;
         }
+    }
+}
+
+@include view(desktop) {
+    .main-footer {
+        border-top: 2px solid $fuchsia;
     }
 }

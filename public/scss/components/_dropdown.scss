@@ -1,0 +1,18 @@
+.dropdown {
+
+    &-menu {
+        list-style: none;
+        cursor: pointer;
+    }
+
+    &-content {
+        display: none;
+    }
+
+    &-item {
+        
+        & a {
+            color: $light;
+        }
+    }
+}

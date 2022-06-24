@@ -1,74 +1,79 @@
 .navbar {
-  background-color: $dark-blue;
-
   display: flex;
   flex-direction: column;
+
+  background-color: $navy-blue;
 
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
 
+  z-index: 100;
+
+  border-bottom: 3px solid $blueviolet;
+  
+  &-header {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+  }
+
   &-brand {
-    padding: 1rem;
-    font-size: 1.3rem;
-    color: $blueviolet;
+    font-size: 1.2rem;
+    padding: .8rem 1.2rem;
+
+    color: $light;
     text-transform: uppercase;
-    font-weight: bolder;
+
+    background-color: $blueviolet;
   }
 
   &-toggle {
-    position: absolute;
-    top: 1.2rem;
-    right: 1rem;
-    width: 2rem;
+    font-size: 1.3rem;
+    padding: .8rem 1.2rem;
+    cursor: pointer;
+    color: $light;
 
-    & i {
-      display: flex;
-      width: 100%;
-
-      font-size: 1.5rem;
-      color: $light;
-
-      &:hover {
-        color: $blueviolet;
-      }
+    &:hover {
+      color: $blueviolet;
     }
+  
   }
 
   &-nav {
-    height: 100%;
-
     display: none;
     flex-direction: column;
-    opacity: 0;
 
-    margin: 0;
-    padding: 0;
+    align-items: center;
+    text-align: center;
+
+    position: relative;
+    vertical-align: middle;
   }
 
   &-item {
-    list-style: none;
-    align-items: center;
+    padding: .8rem 1rem;
   }
 
   &-link {
     display: block;
-
-    text-decoration: none;
     color: $light;
-    padding: .5rem 1rem;
+    text-align: center;
+
+    align-items: center;
 
     &:hover {
-      background-color: $blueviolet;
+      border-bottom: 2px solid $blueviolet;
     }
   }
 }
 
-@include view(tablet) {
+@include view(desktop) {
   .navbar {
+    display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
 
     &-toggle {
@@ -78,7 +83,12 @@
     &-nav {
       display: flex;
       flex-direction: row;
-      opacity: 1;
     }
+
   }
+}
+
+
+.navbar-active {
+  display: flex !important;
 }

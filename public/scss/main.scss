@@ -3,29 +3,29 @@
 @import 'abstracts/bg';
 @import 'abstracts/font';
 
-
 @import 'base/base';
 @import 'base/text';
 @import 'base/utilities';
 
 @import 'components/navbar';
 @import 'components/form';
-@import 'abstracts/form-vaildation';
 @import 'components/card';
 @import 'components/slider';
 @import 'components/carousel';
 @import 'components/accordion';
 @import 'components/modal';
 @import 'components/portfolio';
-@import 'components/button';
-@import 'components/list-group';
-@import 'components/alert';
+@import 'components/dropdown';
+@import 'components/sidenav';
+@import 'components/breadcrumb';
+@import 'components/pagination';
 
 @import 'layouts/grid';
 @import 'layouts/header';
 @import 'layouts/footer';
 
 @import 'pages/landing';
-@import 'pages/new-campground';
-@import 'pages/campground';
-@import 'pages/show-campground';
+@import 'pages/campgrounds';
+@import 'pages/newCampgrounds';
+@import 'pages/showCampgrounds';
+@import 'pages/registration';

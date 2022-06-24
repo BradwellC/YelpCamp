@@ -2,7 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito');
 @import url('https://fonts.googleapis.com/css2?family=Poppins');
 
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -10,21 +12,18 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
 }
 
 body {
   font-family: $main-font;
   // font-size: 62.5%;
-  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+
+  background-color: $grey-light-4;
+  
 }
-
-main {
-  display: flex;
-  flex-direction: column;
-
-  height: 100vh;
-}
-
 
 .open {
   display: block !important;
@@ -32,15 +31,10 @@ main {
   transform: translateY(0) !important;
 }
 
-.error input {
-  border-color: var(--error-color);
+ul {
+  list-style: none;
 }
 
-.success input {
-  border-color: var(--success-color);
-}
-
-
-small {
-  color: var(--error-color);
-}
+// section {
+//   scroll-margin-top: 0;
+// }

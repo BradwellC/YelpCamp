@@ -1,0 +1,263 @@
+.logo {
+    padding: 9rem 0 8rem;
+    align-items: center;
+
+    & img {
+        margin: 0;
+        width: 650px;
+        margin: auto;
+    }
+}
+
+
+.about-me {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5rem;
+
+    background-color: $blue-light;
+    color: $light;
+
+    text-align: center;
+    padding: 7rem 3rem;
+
+    h3 {
+        color: $light;
+    }
+
+    &_left {
+        margin: auto;
+    }
+
+    &_right {
+        margin: auto;
+    }
+}
+
+
+
+.projects {
+
+    margin: auto;
+    text-align: center;
+
+    padding: 5rem 3rem;
+
+    &-title {
+        margin: auto;
+    }
+
+    &-text {
+        margin: auto;
+    }
+}
+
+.work-experience {
+
+    padding: 2rem 1.2rem;
+    background-color: $blue-light;
+
+    h2 {
+       text-align: center;
+    }
+
+    .card {
+
+        .card-body {
+            font-size: 1rem;
+
+            li {
+                font-size: .9rem;
+            }
+
+            span {
+                font-weight: bold;
+            }
+        }
+    }
+
+}
+
+.qualifications {
+    max-height: fit-content;
+    text-align: center;
+    padding: 3rem 1.5rem 5rem;
+
+    background-color: $indigo;
+
+    .section-title {
+        margin: 0 auto;
+        color: $light;
+    }
+
+    #accordion {
+        margin: 1rem auto;
+        width: 90%;
+    }
+
+}
+
+.contact {
+    display: grid;
+    display: -ms-grid;
+    display: -moz-grid;
+
+    grid-template-columns: 1fr;
+
+    padding: 2rem;
+
+    &-form {
+        order: 2;
+    }
+
+    &-content {
+        order: 1;
+        text-align: center;
+    }
+    
+}
+
+@media (prefers-color-scheme: dark) {
+
+    body {
+        background-color: $grey-dark-3;
+    }
+
+    .about-me, .main-footer, .accordion, .accordion-content {
+        background-color: $navy-blue;
+    }
+
+    .accordion:hover,
+    .accordion:focus {
+        background-color: $dark-blue;
+    }
+
+    .work-experience {
+        background-color: $navy-blue;
+    }
+
+    .qualifications {
+        background-color: $blueviolet;
+    }
+
+
+}
+
+@include view(phablet) {
+
+    .logo {
+        padding: 4rem 0 7rem;
+    }
+
+    .about-me {
+        grid-template-columns: repeat(2, 1fr);
+
+        &_left {
+            margin: auto;
+        }
+
+        &_right {
+            margin: auto;
+        }
+    }
+
+    .work-experience {
+
+        .section-title {
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .card {
+            width: 75%;
+        }
+    }
+
+    .qualifications {
+
+        & .section-title {
+            margin: auto;
+        }
+
+        & .accordion,
+        & .accordion-content {
+            width: 80%;
+            margin: auto;
+            align-content: center;
+        }
+    }
+
+    .contact {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+
+        &-form {
+            grid-column: 1;
+        }
+
+        &-content {
+            grid-column: 2;
+
+            margin: auto;
+            text-align: center;
+        }
+    }
+}
+
+@include view(tablet) {
+
+    .logo {
+        padding: 4rem 0 7rem;
+    }
+
+    // .projects {
+    //     padding: 4rem 0;
+    //     & .section-title {
+    //         margin: auto;
+    //     }
+
+    //     &-content {
+    //         columns: 2;
+    //         margin: auto;
+    //     }
+
+    //     &-grid {
+    //         grid-template-columns: repeat(3, 1fr);
+    //     }
+    // }
+}
+
+@include view(desktop) {
+
+    .qualifications {
+    
+            & .section-title {
+                margin: auto;
+            }
+    
+            & .accordion,
+            & .accordion-content {
+                width: 60%;
+                margin: auto;
+                align-content: center;
+            }
+        }
+
+    .contact {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+    
+            &-form {
+                grid-column: 1 /3;
+            }
+    
+            &-content {
+                grid-column: 3;
+    
+                margin: auto;
+                text-align: center;
+            }
+        }
+}

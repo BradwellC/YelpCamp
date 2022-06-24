@@ -1,13 +1,13 @@
-.portfolio-items-wrapper {
+.portfolio {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-.portfolio-item-wrapper {
+.portfolio-item {
     position: relative;
 }
 
-.portfolio-img-background {
+.portfolio-img {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -16,11 +16,11 @@
 
     &:hover {
         transition: 1s;
-        filter: brightness(10%);
+        filter: brightness(40%);
     }
 }
 
-.img-text-wrapper {
+.img-text {
     position: absolute;
     top: 0;
     display: flex;
@@ -31,41 +31,28 @@
     text-align: center;
     padding-left: 100px;
     padding-right: 100px;
+
+    & h1 {
+        color: lightseagreen;
+    }
 }
 
-.img-text-wrapper .subtitle {
+.img-text .subtitle {
     transition: 1s;
     color: transparent;
 }
 
-.image-blur {
-    transition: 1s;
-    filter: brightness(10%);
-}
-
-.img-text-wrapper:hover .subtitle {
+.img-text:hover .subtitle {
     color: lightseagreen;
     font-weight: 600;
 }
 
-.logo-wrapper img {
-    width: 50%;
-    margin-bottom: 20px;
-}
-
-.two-column-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.profile-image-wrapper img {
+.profile-image img {
     width: 100%;
 }
 
-.profile-content-wrapper {
+.profile-content {
     padding: 30px;
 }
 
-.profile-content-wrapper h1 {
-    color: lightseagreen;
-}
+.profile-content {}
