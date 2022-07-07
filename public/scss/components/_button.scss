@@ -1,9 +1,47 @@
 .btn {
-    display: block;
-
+    display: inline-block;
     text-decoration: none;
-    padding: 1rem 2rem;
-
-    background: transparent;
+    padding: .5rem 2rem;
+    background-color: transparent;
     border: none;
+    border-radius: 10px;
+    color: $light;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    -o-transition: all .5s ease;
+}
+
+
+.btn-violet {
+    background-color: $blueviolet;
+
+    &:hover {
+        background-color: $light;
+        border: 1px solid $blueviolet;
+        color: $blueviolet;
+    }
+}
+
+.btn-success {
+    background-color: $thrid-green;
+    color: $light;
+
+    &:hover {
+        background-color: $light;
+        color: $thrid-green;
+        border: 1px solid $thrid-green;
+    }
+}
+
+.btn-danger {
+    background-color: $toruch-red;
+    color: $light;
+
+    &:hover {
+        border: 1.5px solid $toruch-red;
+        color: $toruch-red;
+        background-color: $light;
+    }
 }

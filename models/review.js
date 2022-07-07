@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const reviewSchema = new Schema({
-    content: String,
+    body: String,
     rating: Number
 })
 
-module.exports = mongoose.modelNames('Review', reviewSchema);
+module.exports = mongoose.model('Review', reviewSchema);

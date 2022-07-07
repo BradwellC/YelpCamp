@@ -21,8 +21,7 @@ body {
   margin: 0;
   padding: 0;
 
-  background-color: $grey-light-4;
-  
+  margin-bottom: 5rem;
 }
 
 .open {
@@ -38,3 +37,29 @@ ul {
 // section {
 //   scroll-margin-top: 0;
 // }
+
+@media (prefers-color-scheme: dark) {
+
+  body {
+    background-color: $grey-light-1;
+    color: $dark;
+  }
+
+  .form-control {
+    background-color: $silver;
+  }
+
+  .about-me,
+  .main-footer,
+  .accordion,
+  .accordion-content {
+    background-color: $navy-blue;
+  }
+
+  .accordion:hover,
+  .accordion:focus {
+    background-color: $dark-blue;
+  }
+
+
+}

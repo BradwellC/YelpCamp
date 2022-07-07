@@ -1,0 +1,30 @@
+.alert {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.alert-close {
+    cursor: pointer;
+    color: $light;
+    margin-right: 15px;
+    font-size: 1.2rem;
+
+    &:hover {
+        color: $dark;
+    }
+}
+
+.alert-success {
+    background-color: $main-green;
+    color: $light;
+    opacity: .5;
+}
+
+.alert-danger {
+    background-color: $toruch-red;
+    color: $light;
+    opacity: .5;
+}

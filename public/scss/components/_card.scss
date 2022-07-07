@@ -3,8 +3,8 @@
     text-align: center;
     border-radius: 1.5rem;
     height: fit-content;
-    width: 800%;
     margin: 1rem auto;
+
 
     &-img-top {
         border-top-left-radius: 1.5rem;
@@ -28,7 +28,7 @@
         padding: 1rem;
         color: $dark;
         font-size: 1rem;
-        background: $grey-light-1;
+        background: $light;
         margin: auto;
 
     }
@@ -39,9 +39,8 @@
 
         padding: 1.2rem .8rem;
         color: $light;
-        font-weight: bold;
-        font-size: 1.2rem;
         background: $navy-blue;
+
     }
 
     &-title {
@@ -75,16 +74,6 @@
     }
 }
 
-
-@include view(phablet) {
-    .card {
-        width: 80%;
-        margin: 1rem auto;
-    }
-}
-
-@include view(tablet) {
-    .card {
-        width: 70%;
-    }
+.footer-content {
+    display: inline-flex;
 }

@@ -1,10 +1,11 @@
 .new-campground {
-    margin-top: 8rem;
+    padding: 1rem 0;
 
     & h1 {
         text-align: center;
-        padding-bottom: 2rem;
+        padding-bottom: 1rem;
         margin: auto;
+        color: $dark-violet;
     }
 
     & form {

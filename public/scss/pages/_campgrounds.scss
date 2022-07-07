@@ -1,4 +1,5 @@
-.campgrounds {
+.campground {
+
     display: grid;
     grid-template-columns: 1fr;
 
@@ -7,18 +8,27 @@
     .card {
         width: 80%;
     }
+
+}
+
+.flash-container {
+    padding-top: 1rem;
 }
 
 @include view(phablet) {
-    .campgrounds {
+    .campground {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @include view(desktop) {
-    .campgrounds {
+    .campground {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+
+        .card {
+            width: 70%;
+        }
     }
 }

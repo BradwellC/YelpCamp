@@ -1,32 +1,23 @@
 .show-campground {
-    display: grid;
-    grid-template-columns: auto;
-    gap: 1rem;
-    margin: 6rem auto;
+    padding: .5rem 0 6rem; 
+}
 
-    .card {
-        width: 90%;
-    }
+.campground-review {
+    width: 60%;
+    margin: auto;
+}
 
+.review-forms {
+    width: 100%;
+    margin: auto;
+    border-bottom: 3px solid $blueviolet;
+    padding-bottom: 2rem;
+}
 
-    @include view(tablet) {
-        .show-campground {
-            grid-template-columns: repeat(4,
-                    [col] 100px);
+.review-content {
+    color: $dark;
+    background-color: $light;
+    margin: auto;
 
-        }
-
-        .tabs {
-            grid-column: 1;
-        }
-
-        .campground-content {
-            grid-column: 2 / 4;
-        }
-
-        .card {
-            width: 70%;
-            margin: auto;
-        }
-    }
+    width: 40%;
 }
