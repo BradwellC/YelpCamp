@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config()
+}
+
 const express = require('express');
 const path = require('path');
 const engine = require('ejs-mate');
@@ -10,8 +14,6 @@ const flash = require('connect-flash');
 
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
-
-// AIzaSyC2X1sszOwQCRdjywZr261M1LRHTc-L3sI - GA Maps API
 
 const ExpressError = require('./utilities/ExpressError');
 
@@ -67,6 +69,7 @@ passport.serializeUser(User.serializeUser())
 passport.deserializeUser(User.deserializeUser())
 
 app.use((req, res, next) => {
+    res.locals.user = req.user;
     res.locals.success = req.flash('success');
     res.locals.error = req.flash('error');
     next();

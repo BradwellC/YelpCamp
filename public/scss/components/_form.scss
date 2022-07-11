@@ -1,37 +1,47 @@
 @supports(-webkit-appearance: none) or (-moz-appearance: none) {
 
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+    padding: 3rem;
+  }
+
   .form-group {
     padding: .7rem 0;
+    position: relative;
   }
 
   .form-control {
-    padding: .7rem 1rem;
-    outline: none;
-    font-size: 14px;
     width: 100%;
-    color: $grey-light-4;
-    border: 1px solid $mediumpurple;
+    height: 40px;
+    border-radius: 8px;
+    outline: none;
+    border: 2px solid #c4c4c4;
+    padding: 0 15px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 
     &:focus {
       background-color: $light;
     }
+
+    & i {
+      position: absolute;
+      padding: 10px;
+    }
   }
 
-  .form-group.success input {
+  .form-success input {
     border: 1.5px solid $main-green;
   }
-
-  .form-group.error input {
+  
+  .form-error input {
     border: 1.5px solid $crimson;
   }
 
-  #message {
-    color: $crimson;
-  }
-
   .form-label {
-    color: $dark-violet;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: bold;
   }
 
@@ -180,4 +190,131 @@
       --s: .5;
     }
   }
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  margin-right: 15px;
+  width: 100%;
+  height: 7px;
+  background: $light;
+  border-radius: 5px;
+  // background-image: linear-gradient($navy-blue, $navy-blue);
+  background-repeat: no-repeat;
+}
+
+/* Input Thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: $navy-blue;
+  cursor: pointer;
+  transition: background .3s ease-in-out;
+  -webkit-transition: background .3s ease-in-out;
+  -moz-transition: background .3s ease-in-out;
+  -ms-transition: background .3s ease-in-out;
+  -o-transition: background .3s ease-in-out;
+}
+
+input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: $navy-blue;
+  cursor: pointer;
+  transition: background .3s ease-in-out;
+}
+
+input[type="range"]::-ms-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: $navy-blue;
+  cursor: pointer;
+  transition: background .3s ease-in-out;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background: $navy-blue;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+  background: $navy-blue;
+}
+
+input[type="range"]::-ms-thumb:hover {
+  background: $navy-blue;
+}
+
+/* Input Track */
+input[type=range]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  box-shadow: 0 0 2px 0 #555;
+  border: none;
+  background: transparent;
+}
+
+input[type=range]::-moz-range-track {
+  -webkit-appearance: none;
+  box-shadow: 0 0 2px 0 #555;
+  border: none;
+  background: transparent;
+}
+
+input[type="range"]::-ms-track {
+  -webkit-appearance: none;
+  box-shadow: 0 0 2px 0 #555;
+  border: none;
+  background: transparent;
+}
+
+// File Upload
+.file-upload {
+  display: inline-flex;
+  align-items: center;
+  font-size: 15px;
+  padding: .7rem 0;
+}
+
+.file-upload__input {
+  display: none;
+}
+
+.file-upload__button {
+  -webkit-appearance: none;
+  background-color: $blueviolet;
+  border: 1px solid $violet;
+  border-radius: 10px;
+  outline: none;
+  padding: 0.5em 0.8em;
+  margin-right: 15px;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all .4s ease;
+  &:hover {
+    background-color: $light;
+    color: $blueviolet;
+  }
+}
+
+.file-upload__button:active {
+  background-color: $violet;
+}
+
+.file-upload__label {
+  max-width: 250px;
+  font-size: 0.95em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.form-error {
+  font-size: 14.5px;
+  margin-top: 5px;
 }

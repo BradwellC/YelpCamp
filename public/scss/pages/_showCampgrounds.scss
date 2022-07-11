@@ -15,9 +15,54 @@
 }
 
 .review-content {
-    color: $dark;
-    background-color: $light;
     margin: auto;
 
-    width: 40%;
+    width: 80%;
+}
+
+.review-card {
+    text-align: center;
+    height: fit-content;
+    margin: 2rem auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+
+    &_body {
+        color: $dark;
+        font-size: 1rem;
+        background: $light;
+        margin: auto;
+        padding: 1rem 2rem;
+        border-radius: 10px;
+
+        & form {
+            margin-top: .8rem;
+        }
+    }
+
+    &_copy {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        vertical-align: middle;
+        padding: 0 2rem;
+    }
+}
+
+fieldset {
+    margin: auto;
+}
+
+@include view(tablet) {
+
+    .review-forms {
+        width: 60%;
+        margin: auto;
+    }
+
+    .review-content {
+        margin: auto;
+        width: 50%;
+    }
 }

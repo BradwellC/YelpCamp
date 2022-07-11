@@ -92,29 +92,34 @@ function openEvent(evt, content) {
     evt.currentTarget.className += ' active';
 }
 
-// Form Validation
-const email_reg = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-const pass_reg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
 
-const campgroundForm = document.getElementById('campgroundForm');
+// File Upload 
+Array.prototype.forEach.call(
+    document.querySelectorAll(".file-upload__button"),
+    function (button) {
+        const hiddenInput = button.parentElement.querySelector(
+            ".file-upload__input"
+        );
+        const label = button.parentElement.querySelector(".file-upload__label");
+        const defaultLabelText = "No file(s) selected";
 
-const registerForm = document.getElementById('signup');
+        // Set default text for label
+        label.textContent = defaultLabelText;
+        label.title = defaultLabelText;
 
-campgroundForm.addEventListener('submit', (e) => {
-    const message = document.getElementById('message')
+        button.addEventListener("click", function () {
+            hiddenInput.click();
+        });
 
-    const title = document.getElementById('title').value.trim()
-    const description = document.getElementById('description').value.trim()
-    const price = document.getElementById('price').value.trim()
-    const image = document.getElementById('image').value.trim()
-    const location = document.getElementById('location').value.trim()
+        hiddenInput.addEventListener("change", function () {
+            const filenameList = Array.prototype.map.call(hiddenInput.files, function (
+                file
+            ) {
+                return file.name;
+            });
 
-    e.preventDefault();
-})
-
-
-registerForm.addEventListener('submit', (e) => {
-
-
-    e.preventDefault()
-})
+            label.textContent = filenameList.join(", ") || defaultLabelText;
+            label.title = label.textContent;
+        });
+    }
+);

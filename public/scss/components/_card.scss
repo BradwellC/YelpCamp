@@ -1,22 +1,17 @@
 .card {
 
     text-align: center;
-    border-radius: 1.5rem;
     height: fit-content;
     margin: 1rem auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
 
     &-img-top {
-        border-top-left-radius: 1.5rem;
-        border-top-right-radius: 1.5rem;
         width: 100%;
         height: 250px;
     }
 
     &-header {
-        // border-top-left-radius: 1.5rem;
-        // border-top-right-radius: 1.5rem;
-
         padding: .8rem;
         color: $light;
         font-weight: bold;
@@ -25,7 +20,7 @@
     }
 
     &-body {
-        padding: 1rem;
+        padding: 2rem;
         color: $dark;
         font-size: 1rem;
         background: $light;
@@ -34,13 +29,19 @@
     }
 
     &-footer {
-        border-bottom-left-radius: 1.5rem;
-        border-bottom-right-radius: 1.5rem;
-
         padding: 1.2rem .8rem;
         color: $light;
         background: $navy-blue;
 
+        &-content {
+            display: inline-flex;
+            justify-content: space-between;
+            align-items: center;
+
+            & a {
+                margin-right: .7rem;
+            }
+        }
     }
 
     &-title {
@@ -72,8 +73,4 @@
             padding: .3rem 0;
         }
     }
-}
-
-.footer-content {
-    display: inline-flex;
 }
