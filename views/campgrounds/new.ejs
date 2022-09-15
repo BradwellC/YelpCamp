@@ -1,6 +1,7 @@
 <% layout('layouts/boilerplate') %>
 <div class="new-campground">
   <form
+    class="form"
     id="campgroundForm"
     action="/campgrounds"
     method="post"
@@ -15,7 +16,7 @@
         id="title"
         name="campground[title]"
       />
-      <div id="message"></div>
+      <small></small>
     </div>
 
     <div class="form-group">
@@ -26,7 +27,7 @@
         id="description"
         name="campground[description]"
       />
-      <div id="message"></div>
+      <small></small>
     </div>
 
     <div class="form-group">
@@ -39,7 +40,7 @@
         min="0"
         step="any"
       />
-      <div id="message"></div>
+      <small></small>
     </div>
 
     <div class="file-upload">
@@ -48,7 +49,6 @@
         type="file"
         name="image"
         id="image"
-        multiple
       />
       <button class="file-upload__button" type="button">Choose File(s)</button>
       <span class="file-upload__label"></span>
@@ -73,7 +73,7 @@
         id="area"
         name="campground[location]"
       />
-      <div id="message"></div>
+      <small></small>
     </div>
 
     <div class="form-group">
@@ -91,9 +91,48 @@
 <script>
   const campgroundForm = document.getElementById('campgroundForm');
 
-  const validate = e => {
+  const title = document.getElementById('title');
+  const description = document.getElementById('description');
+  const price = document.getElementById('price');
+  const image = document.getElementById('image');
+  const location = document.getElementById('location');
+
+  campgroundForm.addEventListener('submit', e => {
     e.preventDefault();
 
-    const campgroundTitle = document.getElementById('title');
-  };
+    // campgroundInputs();
+  });
+
+  function campgroundInputs() {
+    const titleValue = title.value.trim();
+    const descriptionValue = description.value.trim();
+    const imageValue = image.value.trim();
+    const priceValue = price.value.trim();
+    const locationValue = location.value.trim();
+
+    if (titleValue === '') {
+      setErrorFor(title, 'Campground title cannot be blank');
+    } else {
+      setSuccessFor(title);
+    }
+
+    if (descriptionValue === '') {
+      setErrorFor(description, 'Campground title cannot be blank');
+    } else {
+      setSuccessFor(description);
+    }
+  }
+
+  function setErrorFor(input, message) {
+    const formGroup = input.parentElement;
+    const small = formGroup.querySelector('small');
+
+    formGroup.className = 'form-group error';
+    small.innerText = message;
+  }
+
+  function setSuccessFor() {
+    const formGroup = input.parentElement;
+    formGroup.className = 'form-group success';
+  }
 </script>

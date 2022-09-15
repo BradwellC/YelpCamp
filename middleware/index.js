@@ -23,18 +23,18 @@ module.exports.isAuthor = async (req, res, next) => {
     next()
 }
 
-module.exports.validateCampground = (req, res, next) => {
+// module.exports.validateCampground = (req, res, next) => {
 
-    const { error } = campgroundSchema.validate(req.body);
+//     const { error } = campgroundSchema.validate(req.body);
 
-    if (error) {
-        const msg = error.details.map(el => el.message).join(',');
+//     if (error) {
+//         const msg = error.details.map(el => el.message).join(',');
 
-        throw new ExpressError(msg, 400);
-    } else {
-        next();
-    }
-}
+//         throw new ExpressError(msg, 400);
+//     } else {
+//         next();
+//     }
+// }
 
 module.exports.isReviewAuthor = async (req, res, next) => {
     const { id, reviewId } = req.params;

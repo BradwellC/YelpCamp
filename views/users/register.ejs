@@ -1,22 +1,17 @@
 <% layout('layouts/boilerplate') %>
 <section class="signup">
-  <form
-    id="registerForm"
-    action="/register"
-    onsubmit="return validateForm()"
-    method="POST"
-  >
+  <form class="form" id="registerForm" action="/register" method="POST">
     <h1>Signup here!</h1>
     <div class="form-group">
       <label class="form-label" for="username">Username:</label>
       <input class="form-control" type="text" name="username" id="username" />
-      <div class="error"></div>
+      <small></small>
     </div>
 
     <div class="form-group">
       <label class="form-label" for="email">Email:</label>
       <input class="form-control" type="text" name="email" id="email" />
-      <div class="error"></div>
+      <small></small>
     </div>
 
     <div class="form-group">
@@ -27,18 +22,18 @@
         name="password"
         id="password"
       />
-      <div class="error"></div>
+      <small></small>
     </div>
 
     <div class="form-group">
-      <label class="form-label" for="password-check">Password Check:</label>
+      <label class="form-label" for="password-check">Password Confirm:</label>
       <input
         class="form-control"
         type="password"
         name="password-check"
         id="password-check"
       />
-      <div class="error"></div>
+      <small></small>
     </div>
 
     <div class="form-group">
@@ -51,3 +46,73 @@
     </div>
   </form>
 </section>
+
+<script>
+  // Form IDs
+  const registerForm = document.getElementById('registerForm');
+
+  // Form Input fields
+  const username = document.getElementById('username');
+  const email = document.getElementById('email');
+  const password = document.getElementById('password');
+  const passwordCheck = document.getElementById('password-check');
+
+  // Form Functions
+  registerForm.addEventListener('submit', e => {
+    e.preventDefault();
+
+    userInputs();
+  });
+
+  function userInputs() {
+    const usernameValue = username.value.trim();
+    const emailValue = email.value.trim();
+    const passwordValue = password.value.trim();
+    const passwordCheckValue = passwordCheck.value.trim();
+
+    if (usernameValue === '') {
+      setErrorFor(username, 'Username cannot be blank');
+    } else {
+      setSuccessFor(username);
+    }
+
+    if (emailValue === '') {
+      setErrorFor(email, 'Email cannot be blank!');
+    } else if (!emailCheck(emailValue)) {
+      setErrorFor(email, 'Must be a valid email address');
+    } else {
+      setSuccessFor(email);
+    }
+
+    if (passwordValue === '') {
+      setErrorFor(password, 'Password cannot be blank!');
+    }
+
+    if (passwordCheckValue === '') {
+      setErrorFor(passwordCheck, 'Password confirm cannot be blank');
+    } else if (passwordValue !== passwordCheckValue) {
+      setErrorFor(passwordCheck, 'password confirm does not match password');
+    } else {
+      setSuccessFor(passwordCheck);
+    }
+  }
+
+  function setErrorFor(input, message) {
+    const formGroup = input.parentElement;
+    const small = formGroup.querySelector('small');
+
+    formGroup.className = 'form-group error';
+    small.innerText = message;
+  }
+
+  function setSuccessFor() {
+    const formGroup = input.parentElement;
+    formGroup.className = 'form-group success';
+  }
+
+  function emailCheck(email) {
+    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+      email
+    );
+  }
+</script>

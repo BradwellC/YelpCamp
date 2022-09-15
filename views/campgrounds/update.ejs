@@ -6,6 +6,7 @@
     id="campgroundForm"
     action="/campgrounds/<%= campground._id %>?_method=PUT"
     method="post"
+    enctype="multipart/form-data"
   >
     <div class="form-group">
       <label class="form-label" for="title">Title:</label>
@@ -40,7 +41,7 @@
       />
     </div>
 
-    <div class="form-group">
+    <!-- <div class="form-group">
       <label class="form-label" for="image">Image:</label>
       <input
         class="form-control"
@@ -50,6 +51,17 @@
         name="campground[image]"
       />
       <div id="message"></div>
+    </div> -->
+
+    <div class="file-upload">
+      <input
+        class="file-upload__input"
+        type="file"
+        name="image"
+        id="image"
+      />
+      <button class="file-upload__button" type="button">Update File(s)</button>
+      <span class="file-upload__label"></span>
     </div>
 
     <div class="form-group">

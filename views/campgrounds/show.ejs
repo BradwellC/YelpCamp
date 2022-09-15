@@ -6,7 +6,7 @@
       <i class="fa-solid fa-campground"></i> Campground
     </button>
     <button
-      class="tablinks tablinks-active"
+      class="tablinks"
       onclick="openEvent(event, 'Reviews')"
     >
       <i class="fa-solid fa-note-sticky"></i> Reviews
@@ -18,14 +18,16 @@
 
   <div id="Campground" class="tabcontent">
     <div class="card">
-      <img src="<%= campground.image %>" alt="" class="card-img-top" />
+      <% campground.image.forEach((img, i) => { %>
+        <img src="<%= img.url %>" class="card-img-top" alt="" />
+      <% }) %>
       <div class="card-header"><%= campground.title %></div>
       <div class="card-body">
         <p><%= campground.location %></p>
         <p><%= campground.description %></p>
         <div class="card-item">
           <span class="card-author"
-            >Author: <b><%= campground.author.username %></b>
+            ><b>Author: <%= campground.author.username %></b>
           </span>
           <span class="card-price">£<%= campground.price %> / month</span>
         </div>
@@ -111,7 +113,7 @@
             name="review[body]"
             id="body"
             cols="30"
-            rows="3"
+            rows="7"
             class="form-control"
           ></textarea>
         </div>
@@ -147,3 +149,31 @@
 
   <div id="Map" class="tabcontent"></div>
 </div>
+
+<script>
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides((slideIndex += n));
+  }
+
+  function currentSlide(n) {
+    showSlides((slideIndex = n));
+  }
+
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName('carousel-item');
+    if (n > slides.length) {
+      slideIndex = 1;
+    }
+    if (n < 1) {
+      slideIndex = slides.length;
+    }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = 'none';
+    }
+    slides[slideIndex - 1].style.display = 'block';
+  }
+</script>

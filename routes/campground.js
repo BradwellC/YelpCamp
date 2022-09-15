@@ -12,16 +12,13 @@ const router = express.Router();
 
 router.route('/')
     .get(campgroundIndex)
-    // .post(loggedIn, validateCampground, createCampground)
-    .post(upload.array('image'), (req, res) => {
-
-    })
+    .post(loggedIn, upload.array('image'), createCampground)
 
 router.get('/new', loggedIn, newCampground);
 
 router.route('/:id')
     .get(showCampground)
-    .put(loggedIn, isAuthor, validateCampground, updateCampground)
+    .put(loggedIn, isAuthor, upload.array('image'), updateCampground)
     .delete(loggedIn, isAuthor, deleteCampground)
 
 router.get('/:id/edit', loggedIn, isAuthor, editCampground);

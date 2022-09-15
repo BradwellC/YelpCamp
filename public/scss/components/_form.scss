@@ -1,6 +1,6 @@
 @supports(-webkit-appearance: none) or (-moz-appearance: none) {
 
-  form {
+  .form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -30,14 +30,6 @@
       position: absolute;
       padding: 10px;
     }
-  }
-
-  .form-success input {
-    border: 1.5px solid $main-green;
-  }
-  
-  .form-error input {
-    border: 1.5px solid $crimson;
   }
 
   .form-label {
@@ -314,7 +306,14 @@ input[type="range"]::-ms-track {
   white-space: nowrap;
 }
 
-.form-error {
-  font-size: 14.5px;
-  margin-top: 5px;
+.success input {
+  border: 1.5px solid $main-green;
+}
+
+.error input {
+  border: 1.5px solid $crimson;
+}
+
+.error small {
+  color: $crimson;
 }

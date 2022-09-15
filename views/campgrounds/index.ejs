@@ -3,7 +3,7 @@
 <div class="campground">
   <% for (let camp of campgrounds) { %>
   <div class="card">
-    <img src="<%= camp.image %>" alt="" class="card-img-top" />
+    <img src="<%= camp.image[0].url %>" alt="" class="card-img-top" />
     <div class="card-header"><%= camp.title %></div>
     <div class="card-body">
       <p><%= camp.description %></p>
